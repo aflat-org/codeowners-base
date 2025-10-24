@@ -1,2 +1,2 @@
 * @aflat
-.github @aflat
+.github @{os.environ['HOME']}
