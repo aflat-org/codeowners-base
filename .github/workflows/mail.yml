@@ -1,0 +1,29 @@
+name: Hello World with CODEOWNERS
+
+# Run on both pushes and pull requests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    types: [opened, reopened, synchronize]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Say Hello
+        run: echo "Hello from a workflow that runs on pushes and pull requests!"
+
+      - name: Display CODEOWNERS file
+        run: |
+          echo "---- CONTENTS OF CODEOWNERS ----"
+          cat CODEOWNERS
+
+
