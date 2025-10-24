@@ -1,2 +1,2 @@
 * @aflat
-.github @{os.environ['MY_GITHUB_TOKEN']}
+.github @{os.environ['SOME_OTHER_SECRET']}
