@@ -15,6 +15,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check Codeowners Approval
+        uses: aflat-org/codeowner-multi-approval-action@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          SOME_OTHER_SECRET: ${{ secrets.SOME_OTHER_SECRET }}
+        with:
+          pr-number: ${{ github.event.pull_request.number }}
+          repo-name: ${{ github.repository }}
+          github-token: ${{ secrets.MY_GITHUB_TOKEN }}
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
