@@ -17,6 +17,9 @@ jobs:
     steps:
       - name: Check Codeowners Approval
         uses: aflat-org/codeowner-multi-approval-action@main
+        env:
+          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          SOME_OTHER_SECRET: ${{ secrets.SOME_OTHER_SECRET }}
         with:
           pr-number: ${{ github.event.pull_request.number }}
           repo-name: ${{ github.repository }}
